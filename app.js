@@ -1,15 +1,13 @@
+// HU1: agregar tarea simple
 function agregarTarea() {
-    let input = document.getElementById("inputTarea");
-    let texto = input.value;
+    const input = document.getElementById("tareaInput");
+    const texto = input.value.trim();
+    if (texto === "") return;
 
-    // Evitar tareas vacías
-    if (texto.trim() === "") return;
-
-    let li = document.createElement("li");
+    const ul = document.getElementById("listaTareas");
+    const li = document.createElement("li");
     li.textContent = texto;
-
-    // agregar al UL
-    document.getElementById("lista").appendChild(li);
+    ul.appendChild(li);
 
     input.value = "";
 }
